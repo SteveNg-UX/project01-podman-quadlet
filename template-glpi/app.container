@@ -1,0 +1,18 @@
+[Unit]
+Description=App GLPI
+After=pod-glpi.service
+Requires=pod-glpi.service
+
+[Container]
+ContainerName=glpi
+Image=docker.io/library/glpi/glpi:latest
+Pod=pod-glpi
+EnvironmentFile=/tmp/.env_appglpi
+Volume=glpi_data:/var/glpi
+
+[Service]
+Restart=always
+TimeoutStartSec=120
+
+[Install]
+WantedBy=default.target
