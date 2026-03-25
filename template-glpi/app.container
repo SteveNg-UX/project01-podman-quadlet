@@ -1,13 +1,13 @@
 [Unit]
-Description=App GLPI
-After=pod-glpi.service
-Requires=pod-glpi.service
+Description=App Project01 GLPI
+After=db.service
+Requires=db.service
 
 [Container]
-ContainerName=glpi
-Image=docker.io/library/glpi/glpi:latest
-Pod=pod-glpi
-EnvironmentFile=/tmp/.env_appglpi
+ContainerName=app-glpi
+Image=docker.io/glpi/glpi
+Pod=glpi
+EnvironmentFile=%h/.config/containers/systemd/.env_appglpi
 Volume=glpi_data:/var/glpi
 
 [Service]

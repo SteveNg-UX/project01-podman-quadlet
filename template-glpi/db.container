@@ -1,13 +1,13 @@
 [Unit]
-Description=Mysql pour GPLI
-After=db-glpi.service
-Requires=db-glpi.service
+Description=DB Project01 GLPI
+After=glpi-pod.service
+Requires=glpi-pod.service
 
 [Container]
 ContainerName=db-glpi
-Image=docker.io/library/mysql
-Pod=pod-pod-glpi
-EnvironmentFile=/tmp/.env_dbglpi
+Image=docker.io/library/mysql:8.0
+Pod=glpi
+EnvironmentFile=%h/.config/containers/systemd/.env_dbglpi
 Volume=db_data:/var/lib/mysql
 
 [Service]

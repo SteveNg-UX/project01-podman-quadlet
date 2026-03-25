@@ -1,10 +1,9 @@
 [Unit]
-Description=Pod Project01
+Description=Pod Project01 GLPI
 
 [Pod]
-PodName=pod-glpi
-PublishPort=80:80
-PublishPort=443:443
+PodName=glpi
+PublishPort=8080:80
 
 [Install]
 WantedBy=default.target
