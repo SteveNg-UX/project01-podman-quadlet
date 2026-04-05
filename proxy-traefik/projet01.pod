@@ -1,0 +1,11 @@
+[Unit]
+Description=Pod Projet 01
+
+[Pod]
+PodName=projet01
+PublishPort=8081:8080
+PublishPort=8080:80
+PublishPort=8443:443
+
+[Install]
+WantedBy=default.target

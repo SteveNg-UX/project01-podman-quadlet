@@ -1,13 +1,13 @@
 [Unit]
 Description=Porxy for project
+After=projet01-pod.service
+Requires=projet01-pod.service
 
 [Container]
 ContainerName=traefik
 Image=docker.io/library/traefik:v3.6
 Volume=/home/${USER}/.config/systemd/user/sockets.target.wants/podman.socket:/home/${USER}/.config/systemd/user/sockets.target.wants/podman.socket
-PublishPort=8081:8080
-PublishPort=8080:80
-PublishPort=8443:443
+Pod=projet01.pod
 Exec=traefik \
   --api.insecure=true \
   --providers.docker=true \
