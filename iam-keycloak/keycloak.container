@@ -1,0 +1,15 @@
+[Unit]
+Description=container iam keycloak
+
+[Container]
+ContainerName=keycloak
+Image=
+PublishPort=8082:8080
+Exec=start-dev
+
+[Service]
+Restart=always
+TimeoutStartSec=90
+
+[Install]
+WantedBy=default.target
