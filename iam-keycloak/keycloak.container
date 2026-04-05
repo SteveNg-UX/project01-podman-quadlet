@@ -5,6 +5,8 @@ Description=container iam keycloak
 ContainerName=keycloak
 Image=
 PublishPort=8082:8080
+Environment=KC_BOOTSTRAP_ADMIN_USERNAME=admin
+Environment=KC_BOOTSTRAP_ADMIN_PASSWORD=admin
 Exec=start-dev
 
 [Service]
