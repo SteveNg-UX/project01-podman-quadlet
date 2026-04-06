@@ -1,0 +1,9 @@
+[Unit]
+Description=pod iam
+
+[Pod]
+PodName=iam
+PublishPort=8080:8080
+
+[Install]
+WantedBy=default.target

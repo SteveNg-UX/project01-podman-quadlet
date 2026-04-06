@@ -1,13 +1,15 @@
 [Unit]
-Description=container iam keycloak
+Description=container app iam
+After=iam-pod.service
+Requires=iam-pod.service
 
 [Container]
 ContainerName=keycloak
-Image=
-PublishPort=8082:8080
+Image=quay.io/keycloak/keycloak:26.5.7
+Pod=iam.pod
+Exec=start-dev
 Environment=KC_BOOTSTRAP_ADMIN_USERNAME=admin
 Environment=KC_BOOTSTRAP_ADMIN_PASSWORD=admin
-Exec=start-dev
 
 [Service]
 Restart=always
