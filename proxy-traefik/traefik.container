@@ -1,12 +1,12 @@
 [Unit]
-Description=Porxy for project
+Description=Proxy for project
 After=projet01-pod.service
 Requires=projet01-pod.service
 
 [Container]
 ContainerName=traefik
 Image=docker.io/library/traefik:v3.6
-Volume=/home/${USER}/.config/systemd/user/sockets.target.wants/podman.socket:/home/${USER}/.config/systemd/user/sockets.target.wants/podman.socket
+Volume=/run/user/%U/podman/podman.sock:/var/run/docker.sock
 Pod=projet01.pod
 Exec=traefik \
   --api.insecure=true \
