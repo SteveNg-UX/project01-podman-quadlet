@@ -1,0 +1,19 @@
+pipeline {
+    agent any
+    environment {
+        MYVAR1 = "Variable 1"
+        MYVAR2 = "Variable 2"
+    }
+    stages {
+        stage('stage test 1') {
+            steps {
+                echo "resultat : ${MYVAR1}"
+            }
+        }
+        stage('stage test 2') {
+            steps {
+                echo "resultat : ${MYVAR2}"
+            }
+        }
+    }
+}
