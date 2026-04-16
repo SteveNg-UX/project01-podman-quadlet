@@ -1,0 +1,16 @@
+[Unit]
+Description=Run container Jenkins
+
+[Container]
+ContainerName=jenkins
+Image=docker.io/jenkins/jenkins
+Volume=jenkins_homes:/var/jenkins_home
+PublishPort=8080:8080
+PublishPort=50000:50000
+
+[Service]
+Restart=always
+TimeoutStartSec=120
+
+[Install]
+WantedBy=default.target
